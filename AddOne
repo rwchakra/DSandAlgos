@@ -1,0 +1,42 @@
+Link to question - https://www.interviewbit.com/problems/add-one-to-number/
+
+Code :
+
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def plusOne(self, A):
+        
+        l=len(A)
+        s = 0
+        
+        for i in range(0,l):
+        s+= A[i]*(10 **(l-i-1))
+        return [int(i) for i in str(s+1)]
+        
+        Comments:
+        
+        This code passed for the Compilation and Correctness tests on the portal, but did not pass the efficiency test. SO this isn't the         optimal solution. The optimal solution is given below:
+        
+        class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def plusOne(self, A):
+        
+        n=len(A)
+        if A.count(0)==n:
+            return [1]
+        else:
+            while A[0]==0:
+                A.pop(0)
+                n-=1
+        for i in range(n-1,-1,-1):
+            if A[i]==9:
+                A[i]=0
+            else:
+                A[i]+=1
+                break
+        if A[0]==0:
+            A.insert(0,1)
+        return A
+        
