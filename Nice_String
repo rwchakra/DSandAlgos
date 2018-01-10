@@ -1,0 +1,27 @@
+Problem - https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/practice-problems/algorithm/monk-and-nice-strings-3/
+
+
+Code:
+
+n = int(raw_input())
+ch = []
+
+while(n > 0):
+    
+    ch.append(raw_input())
+    
+    n = n - 1
+
+print "0"
+
+for i in range(1, len(ch)):
+    count = 0
+    pos = i
+    
+    while(i > 0):
+        
+        if ch[i-1] < ch[pos]:
+            count = count + 1
+        i = i - 1
+        
+    print count
