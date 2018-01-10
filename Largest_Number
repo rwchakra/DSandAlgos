@@ -1,0 +1,11 @@
+Problem - https://www.interviewbit.com/problems/largest-number/
+
+Code:
+
+def largestNumber(self, A):
+        
+        maxlen = len(str(max(A)))
+        if all(v == 0 for v in A):
+            return '0'
+        return ''.join(sorted((str(v) for v in A), reverse=True,
+                          key=lambda i: i*(maxlen * 2 // len(i))))
