@@ -1,0 +1,24 @@
+Problem - https://www.interviewbit.com/problems/fizzbuzz/
+
+Code:
+
+class Solution:
+    # @param A : integer
+    # @return a list of strings
+    def fizzBuzz(self, A):
+        str_lst = []
+    
+        for i in range(1, A+1):
+            
+            if((i%3 == 0) and (i%5 == 0)):
+                str_lst.append('FizzBuzz')
+            
+            elif(i%3 == 0):
+                str_lst.append('Fizz')
+            elif(i%5 == 0):
+                str_lst.append('Buzz')
+            
+            else:
+                str_lst.append(i)
+                
+        return str_lst

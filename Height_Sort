@@ -1,0 +1,27 @@
+Problem - https://www.hackerearth.com/problem/algorithm/monk-being-monitor/
+
+Code:
+
+from collections import Counter
+
+t = int(raw_input())
+
+for i in range(0, t):
+    
+    n = int(raw_input())
+    s = raw_input()
+    heights = s.split()
+    sort_heights = sorted(heights)
+    
+    sorted_heights = [int(i) for i in sort_heights]
+    counts = Counter(sorted_heights)
+    
+    max_frequency = max(counts.values())
+    min_frequency = min(counts.values())
+    
+    #print most_frequent_value, max_frequency
+    
+    if((max_frequency - min_frequency) > 0):
+        print (max_frequency - min_frequency)
+    else:
+        print -1

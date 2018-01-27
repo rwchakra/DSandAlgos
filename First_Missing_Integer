@@ -1,0 +1,38 @@
+Problem - https://www.interviewbit.com/problems/first-missing-integer/
+
+Code:
+
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def firstMissingPositive(self, A):
+        
+        #first case is if all integers are non-positive. Then, answer is 1
+        
+        
+        A = [i for i in A if i > 0]
+        #min_lst = min(A)
+        A = sorted(A)
+        N = len(A)
+        
+        
+        if N == 0:
+            return 1
+         
+        # Unique case where length of array is 1 and minimum is also 1.   
+        elif (min(A) == 1 and N == 1):
+            return 2
+            
+        # Next case is if minimum is not 1. Then, return 1.
+        elif(min(A) != 1):
+            return 1
+            
+        # Last case. Minimum is not 1
+        else:
+            for i in range(0, N):
+                try:
+                    if ((A[i+1] - A[i]) != 1):
+                        return A[i] + 1
+                except:
+                    return A[N-1] + 1
+                
