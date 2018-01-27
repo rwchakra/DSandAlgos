@@ -1,0 +1,30 @@
+https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-string-manipulation/practice-problems/algorithm/monk-teaches-palindrome/
+
+Code:
+
+'''
+# Sample code to perform I/O:
+
+name = raw_input()          # Reading input from STDIN
+print 'Hi, %s.' % name      # Writing output to STDOUT
+
+# Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+'''
+
+# Write your code here
+
+t = int(raw_input())
+
+for i in range(0,t):
+    s = raw_input()
+    l = len(s)
+        
+    if((s[:] == s[::-1]) and (l%2 == 0)):
+        print "YES", "EVEN"
+        
+    elif((s[:] == s[::-1]) and (l%2 != 0)):
+        print "YES", "ODD"
+        
+    else:
+        print "NO"
+        
