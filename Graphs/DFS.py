@@ -3,7 +3,7 @@
 
 def do_DFS(graph, source):
 
-	#Intialise a set for all visited nodes, and a stack for all unvisited notes.
+	#Intialise a set for all visited nodes, and a stack for all unvisited nodes.
 
 	visited, stack = set(), [source]
 
@@ -11,7 +11,7 @@ def do_DFS(graph, source):
 	while stack:
 		#Pop the last element
 		vertex = stack.pop()
-		#Has this vertex been visitied?
+		#Has this vertex been visited?
 		if vertex not in visited:
 			visited.add(vertex)
 			stack.extend(graph[vertex] - visited) # Add the next corresponding iterable of source to stack.
