@@ -23,7 +23,7 @@ def topsort(graph):
 		for v in graph[u]:
 			indegrees[v] += 1
 
-	#Step 2
+	#Steps 2 and 3
 	visited = []
 	queue = [key for key in graph.keys() if indegrees[key] == 0]
 
